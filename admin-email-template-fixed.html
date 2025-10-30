@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .container {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .logo {
+            max-width: 120px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        .content {
+            padding: 30px;
+        }
+        .order-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .info-item {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        .badge {
+            background: #28a745;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .order-items {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #e9ecef;
+        }
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f3f4;
+        }
+        .order-item:last-child {
+            border-bottom: none;
+        }
+        .total-amount {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+            border: 2px solid #007bff;
+        }
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://www.printology.my.id/og-image.png" alt="Printology Logo" class="logo">
+            <h1>PESANAN BARU</h1>
+            <p>Printology Customer Order</p>
+        </div>
+
+        <div class="content">
+            <div class="badge">ORDER #{{order_id}}</div>
+            <h2>Detail Pelanggan</h2>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>👤 Nama</strong><br>
+                    {{from_name}}
+                </div>
+                <div class="info-item">
+                    <strong>📧 Email</strong><br>
+                    {{from_email}}
+                </div>
+                <div class="info-item">
+                    <strong>📞 Telepon</strong><br>
+                    {{phone}}
+                </div>
+                <div class="info-item">
+                    <strong>📍 Alamat</strong><br>
+                    {{address}}
+                </div>
+                <div class="info-item">
+                    <strong>💳 Metode Bayar</strong><br>
+                    {{payment_method}}
+                </div>
+                <div class="info-item">
+                    <strong>📅 Waktu Order</strong><br>
+                    {{order_date}}
+                </div>
+            </div>
+
+            <div class="order-card">
+                <h3>🛒 Detail Pesanan</h3>
+
+                <div class="order-items">
+                    <h4>Items:</h4>
+                    {{{order_details}}}
+                </div>
+
+                <div class="total-amount">
+                    <h3 style="margin: 0; color: #0056b3;">Total: {{total_amount}}</h3>
+                </div>
+
+                {{#if has_notes}}
+                <div style="margin-top: 15px;">
+                    <strong>📝 Catatan Tambahan:</strong><br>
+                    {{notes}}
+                </div>
+                {{/if}}
+            </div>
+
+            <div style="background: #e7f3ff; padding: 15px; border-radius: 10px; margin: 20px 0;">
+                <h4 style="margin-top: 0; color: #0056b3;"> Tindakan Selanjutnya</h4>
+                <p>Segera hubungi pelanggan untuk konfirmasi dan proses lebih lanjut.</p>
+                <p><strong>Reply to:</strong> {{reply_to}}</p>
+                <p><strong>Telepon:</strong> {{phone}}</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 Printology. All rights reserved.<br>
+            Jl. Raya Lenteng Agung No. 123, Jakarta</p>
+        </div>
+    </div>
+</body>
+</html>
