@@ -30,7 +30,7 @@ const Index = () => {
   ];
 
   const technicalSkills = [
-    "Pemrograman (Kotlin, ERP Odoo 12)",
+    "Pemrograman (Kotlin, JavaScript, Python, NodeJS, ERP Odoo 12)",
     "Dokumentasi Teknis",
     "Problem Solving & Komunikasi",
     "Digital Marketing & Kerja Tim",
