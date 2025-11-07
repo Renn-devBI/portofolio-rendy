@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark mode futuristic theme */
+    --background: 220 40% 5%;
+    --foreground: 0 0% 95%;
+
+    --card: 220 35% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 220 35% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 200 100% 55%;
+    --primary-foreground: 220 40% 5%;
+    
+    --primary-glow: 195 100% 70%;
+    --neon-blue: 200 100% 55%;
+    --neon-cyan: 180 100% 50%;
+
+    --secondary: 220 30% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 220 30% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 200 100% 55%;
+    --accent-foreground: 220 40% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 30% 15%;
+    --input: 220 30% 15%;
+    --ring: 200 100% 55%;
+
+    --radius: 0.75rem;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(200 100% 55%), hsl(180 100% 50%));
+    --gradient-card: linear-gradient(180deg, hsl(220 35% 8%), hsl(220 30% 10%));
+    --gradient-glow: radial-gradient(circle at center, hsl(200 100% 55% / 0.15), transparent 70%);
+    
+    --shadow-neon: 0 0 20px hsl(200 100% 55% / 0.5), 0 0 40px hsl(200 100% 55% / 0.3);
+    --shadow-neon-strong: 0 0 30px hsl(200 100% 55% / 0.8), 0 0 60px hsl(200 100% 55% / 0.5);
+    --shadow-soft: 0 4px 20px -2px hsl(200 100% 55% / 0.2);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 220 35% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 200 100% 55%;
+    --sidebar-primary-foreground: 220 40% 5%;
+    --sidebar-accent: 220 30% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 220 30% 15%;
+    --sidebar-ring: 200 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
